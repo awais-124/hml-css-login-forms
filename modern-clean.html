@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Clean Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #EEEEEE;
+            padding: 20px;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            background: #F9F7F7;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-side {
+            width: 50%;
+            padding: 40px;
+        }
+
+        .logo-placeholder {
+            width: 64px;
+            height: 64px;
+            background: #3F72AF;
+            margin-bottom: 2rem;
+        }
+
+        h2 {
+            color: #112D4E;
+            margin-bottom: 2rem;
+            font-size: 1.8rem;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: #393E46;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #DBE2EF;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #3F72AF;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #3F72AF;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #112D4E;
+        }
+
+        .design-side {
+            width: 50%;
+            background: #112D4E;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .design-side h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .design-side p {
+            color: #DBE2EF;
+        }
+
+        @media (max-width: 768px) {
+            .form-container {
+                flex-direction: column-reverse;
+            }
+
+            .form-side, .design-side {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-side">
+            <div class="logo-placeholder"></div>
+            <h2>Welcome Back</h2>
+            <form>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter your password">
+                </div>
+                <button type="submit">Sign In</button>
+            </form>
+        </div>
+        <div class="design-side">
+            <div>
+                <h3>Find Your Dream Job</h3>
+                <p>Connect with the best opportunities.</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
