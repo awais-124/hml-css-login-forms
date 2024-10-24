@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Portal Login</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            height: 100%;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+            background-image: url("images/11.jpg");
+        }
+        .loginHeader {
+            background-color: rgba(0, 128, 128, 0.575);
+            color: #ffffff;
+            font-size: 18px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .loginHeader img {
+            width: 60px;
+            height: 60px;
+        }
+        .loginHeader div {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: 3rem;
+        }
+        .loginHeader div img {
+            width: 50px;
+            height: 50px;
+        }
+        .loginHeader h1 {
+            padding: 0;
+            margin: 20px 0;
+        }
+        .formWrapper {
+            margin-bottom: -50px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 3rem;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            backdrop-filter: blur(10px);
+            box-shadow: rgba(255, 255, 255, 0.445) 0px 5px 15px;
+            gap: 20px;
+        }
+        .heading {
+            color: #ffffff;
+            margin-bottom: 1rem;
+        }
+        .tabs {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            gap: 20px;
+            align-items: center;
+            width: 100%;
+            flex-wrap: wrap;
+            text-align: center;
+        }
+        .tab {
+            flex: 1;
+            padding: 10px 20px;
+            color: #ffffff;
+            background: rgba(0, 128, 128, 0.575);
+            text-transform: uppercase;
+            font-size: 16px;
+            font-weight: 500;
+            border-bottom: 3px solid rgba(0, 128, 128, 0.671);
+            cursor: pointer;
+        }
+        .tab.active {
+            background: rgba(0, 128, 128, 0.712);
+            border-bottom: 3px solid #fff;
+            border-top-left-radius: 20px;
+            border-top-right-radius: 20px;
+        }
+        .form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        .inputGroup {
+            margin-bottom: 1rem;
+        }
+        .input {
+            width:calc(100% - 30px);
+            color: #ffffff;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 128, 128, 0.575);
+            outline: 0;
+            padding: 12px 15px;
+            background: rgba(0, 128, 128, 0.575);
+        }
+        .input::placeholder {
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 500;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .button {
+            padding: 0.8rem;
+            border: none;
+            border-radius: 8px;
+            background-color: rgb(37, 208, 214);
+            color: #ffffff;
+            font-size: 1rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: rgba(37, 208, 214, 0.836);
+        }
+        .loginFooter {
+            bottom: 0;
+            width: 100%;
+            position: fixed;
+            font-size: 14px;
+            color: #ffffff;
+            background: rgba(0, 128, 128, 0.575);
+            margin-top: 20px;
+            text-align: center;
+        }
+        @media (max-width: 1320px) {
+            .formWrapper {
+                padding: 2rem;
+            }
+            .tabs {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .tab {
+                width: 90%;
+                padding: 5px 0;
+            }
+        }
+        @media (max-width: 1100px) {
+            .heading {
+                font-size: 18px;
+                font-weight: 600;
+            }
+            .formWrapper {
+                width: 50%;
+            }
+        }
+        @media (max-width: 768px) {
+            .loginHeader img {
+                display: none;
+            }
+            .heading {
+                font-size: 16px;
+            }
+            .formWrapper {
+                width: 70%;
+                padding: 1.5rem;
+            }
+            .button {
+                padding: 0.5rem;
+            }
+            .input {
+                padding: 10px 12px;
+            }
+        }
+        @media (max-width: 480px) {
+            .formWrapper {
+                width: 80%;
+                padding: 1rem;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="loginHeader">
+            <img src="images/student.png" alt="icon-of-students">
+            <div>
+                <img src="images/student-group.png" alt="icon-of-students">
+                <h1>JOB PORTAL</h1>
+                <img src="images/student-group.png" alt="icon-of-students">
+            </div>
+            <img src="images/teacher.png" alt="icon-of-students">
+        </header>
+        <div class="formWrapper">
+            <div class="tabs">
+                <div class="tab" >Applicant</div>
+                <div class="tab">Employer</div>
+            </div>
+            <h2 class="heading">APPLICANT LOGIN</h2>
+            <form onsubmit="handleSubmit(event)" class="form">
+                <div class="inputGroup">
+                    <input id="username" type="text" class="input" placeholder="Username" required>
+                </div>
+                <div class="inputGroup">
+                    <input id="password" type="password" class="input" placeholder="Password" required>
+                </div>
+                <button type="submit" class="button">LOGIN</button>
+            </form>
+        </div>
+        <footer class="loginFooter">
+            <p>Copyrights @AVCI Technologies 2024. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

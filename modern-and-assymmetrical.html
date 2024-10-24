@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobSeeker - Sign In (Modern and Asymmetrical)</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Raleway', sans-serif;
+        }
+
+        body {
+            background-color: url('./images/2.jpg');
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            display: flex;
+            width: 800px;
+            height: 500px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .image-section {
+            flex: 1;
+            background-image: url('./images/2.jpg');
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .image-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(72, 52, 212, 0.8), rgba(41, 128, 185, 0.8));
+        }
+
+        .form-section {
+            flex: 1;
+            background-color: white;
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 10px 0;
+            border: none;
+            border-bottom: 1px solid #bdc3c7;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .input-group input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .input-group label {
+            position: absolute;
+            top: 10px;
+            left: 0;
+            font-size: 16px;
+            color: #bdc3c7;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .input-group input:focus ~ label,
+        .input-group input:valid ~ label {
+            top: -20px;
+            font-size: 12px;
+            color: #3498db;
+        }
+
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .links {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .links a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 14px;
+        }
+        #background-video {
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        z-index: -1;
+        }
+        #inside-video {
+        width: 100%;
+        height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <video id="background-video" autoplay loop muted poster="../images/11.jpg">
+        <source src="./WORK/images/3209211-uhd_3840_2160_25fps.mp4" type="video/mp4">
+    </video>
+    <div class="container">
+        <div class="image-section"> 
+            <video id="inside-video" autoplay loop muted poster="../images/11.jpg">
+                <source src="./WORK/images/3209211-uhd_3840_2160_25fps.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="form-section">
+            <h1>Welcome Back</h1>
+            <form>
+                <div class="input-group">
+                    <input type="email" id="email" name="email" required>
+                    <label for="email">Email Address</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" name="password" required>
+                    <label for="password">Password</label>
+                </div>
+                <button type="submit">Sign In</button>
+            </form>
+            <div class="links">
+                <a href="six.html">Forgot password?</a>
+                <a href="six.html">Create an account</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal Login - Dark Theme</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(45deg,#000, #111,#222,#333,#444,#555,#666,#777,#888,#999);
+            background: linear-gradient(45deg,red,blueviolet);
+            background: linear-gradient(
+                                45deg,
+                                #800000,  /* Maroon */
+                                #8B0000,  /* Dark Red */
+                                #8B4513,  /* Saddle Brown */
+                                #A52A2A,  /* Brown */
+                                #2F4F4F,  /* Dark Slate Gray */
+                                #4B0082,  /* Indigo */
+                                #191970,  /* Midnight Blue */
+                                #000080,  /* Navy */
+                                #00008B,  /* Dark Blue */
+                                #483D8B,  /* Dark Slate Blue */
+                                #4682B4,  /* Steel Blue */
+                                #008080,  /* Teal */
+                                #006400,  /* Dark Green */
+                                #556B2F,  /* Dark Olive Green */
+                                #2E8B57,  /* Sea Green */
+                                #3CB371,  /* Medium Sea Green */
+                                #8B008B,  /* Dark Magenta */
+                                #4B0150,  /* Dark Purple */
+                                #32174D,  /* Russian Violet */
+                                #1A1A1A   /* Very Dark Gray */
+                                        );    
+            background: linear-gradient(
+                                45deg,
+                                #1a237e,  /* Dark Indigo */
+                                #4a148c,  /* Deep Purple */
+                                #880e4f,  /* Dark Pink */
+                                #b71c1c,  /* Dark Red */
+                                #bf360c,  /* Deep Orange */
+                                #e65100,  /* Dark Orange */
+                                #f57f17,  /* Dark Amber */
+                                #827717,  /* Olive */
+                                #33691e,  /* Dark Green */
+                                #1b5e20,  /* Forest Green */
+                                #004d40,  /* Teal */
+                                #006064,  /* Dark Cyan */
+                                #01579b,  /* Dark Blue */
+                                #0d47a1,  /* Strong Blue */
+                                #1a237e,  /* Indigo Again */
+                                #311b92,  /* Deep Purple */
+                                #4a148c,  /* Purple */
+                                #6a1b9a,  /* Dark Violet */
+                                #4e342e,  /* Brown */
+                                #3e2723   /* Dark Brown */
+                                );                     
+            background-size: 500% 500%;
+            animation: gradient 15s ease infinite;
+            overflow-y: hidden;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        .login-container {
+            position: relative;
+            width: 400px;
+            height: 500px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .form {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            padding: 50px;
+        }
+
+        .form h2 {
+            position: relative;
+            color: #fff;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 5px;
+            margin-bottom: 40px;
+            cursor: pointer;
+        }
+
+        .form h2::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -10px;
+            width: 0;
+            height: 3px;
+            background: #00a8ff;
+            transition: 0.5s;
+        }
+
+        .form h2:hover::before {
+            width: 53px;
+        }
+
+        .form .input-box {
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .form .input-box input {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.08);
+            border: none;
+            outline: none;
+            padding: 10px 20px;
+            border-radius: 35px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 16px;
+            letter-spacing: 1px;
+            color: #fff;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: 0.3s;
+        }
+
+        .form .input-box input:focus {
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .form .input-box input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .form .input-box input[type="submit"] {
+            background: #00a8ff;
+            color: #111;
+            max-width: 150px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        .form .input-box input[type="submit"]:hover {
+            background: #0097e6;
+        }
+
+        .forget {
+            margin-top: 6px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+        .forget a {
+            color: #00a8ff;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .forget a:hover {
+            color: #0097e6;
+        }
+
+        .background-shapes div {
+            position: absolute;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            animation: animate 10s linear infinite;
+            animation-delay: calc(-1s * var(--i));
+        }
+
+        @keyframes animate {
+            0%, 100% {
+                transform: translateY(-40px);
+            }
+            50% {
+                transform: translateY(40px);
+            }
+        }
+        
+        @keyframes animateX {
+            0%, 100% {
+                transform: translateX(-70px);
+            }
+            50% {
+                transform: translateX(70px);
+            }
+        }
+
+        .background-shapes div:nth-child(1) {
+            top: -50px;
+            right: -60px;
+            width: 100px;
+            height: 100px;
+        }
+        
+        .background-shapes div:nth-child(2) {
+            top: 150px;
+            left: -100px;
+            width: 120px;
+            height: 120px;
+            z-index: 2;
+        }
+        
+        .background-shapes div:nth-child(3) {
+            bottom: 50px;
+            right: -60px;
+            width: 80px;
+            height: 80px;
+            z-index: 2;
+        }
+        
+        .background-shapes div:nth-child(4) {
+            bottom: -80px;
+            left: 100px;
+            width: 50px;
+            height: 50px;
+            animation: animateX 10s linear infinite;
+        }
+
+        .background-shapes div:nth-child(5) {
+            top: -80px;
+            left: 140px;
+            width: 60px;
+            height: 60px;
+            animation: animateX 10s linear infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="form">
+            <h2>Login</h2>
+            <form>
+                <div class="input-box">
+                    <input type="email" placeholder="Email">
+                </div>
+                <div class="input-box">
+                    <input type="password" placeholder="Password">
+                </div>
+                <div class="input-box">
+                    <input type="submit" value="Login">
+                </div>
+                <p class="forget">Forgot Password? <a href="water.html">Click Here</a></p>
+            </form>
+        </div>
+        <div class="background-shapes">
+            <div style="--i:0;"></div>
+            <div style="--i:1;"></div>
+            <div style="--i:2;"></div>
+            <div style="--i:3;"></div>
+            <div style="--i:4;"></div>
+        </div>
+    </div>
+</body>
+</html>
